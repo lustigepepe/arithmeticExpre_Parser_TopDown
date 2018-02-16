@@ -14,6 +14,7 @@
 
 using namespace std;
 
+
 char * input = nullptr;
 
 struct RememberTerm
