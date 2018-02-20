@@ -12,12 +12,64 @@
 #include <string>
 #include <vector>
 
-//#include "main.hpp"
-//#include "../TestParser/mainTest.hpp"
 using namespace std;
 
 
 char * input = nullptr;
+
+bool opValid(char ch)
+{
+    if(ch == '+'|| ch == '-' || ch == '/'|| ch == '*'|| ch == '(' || ch == ')')
+        return true;
+    return false;
+}
+
+bool plusMinus(char ch)
+{
+    if(ch == '-' || ch == '+')
+        return true;
+    return false;
+}
+
+bool checkInput(const char* _input )
+{
+    char charOne;
+    char charNext;
+    int numberCount = 0;
+    int len = (int)strlen(_input);
+    bool isSign = false;
+    
+    for(int i = 0; i < len; ++i)
+    {
+        charOne = _input[i];
+        charNext = _input[i+1];
+        int intOne = charOne-'0';
+        int intNext = charNext-'0';
+
+        if(intOne > -1 && intOne < 10)
+        {
+            if(intNext > -1 && intNext < 10)
+            {
+                cout << "literal is too large" << endl;
+                return false;
+            }
+            numberCount++;
+        }
+        else
+        if(!opValid(charOne))
+            cout << "sign is not valid" << endl;
+        else
+            if(!isSign && plusMinus(charOne))
+                isSign = true;
+    }
+    
+    if(numberCount == 1 && isSign)
+    {
+        cout << "sign is just a unary literal" << endl;
+        return false;
+    }
+    return true;
+}
 
 
 struct BrackPoint
@@ -271,6 +323,10 @@ int main(int argc, const char * argv[])
     input = toPointer.get();
 
     cout << "------------------------" << endl;
+    
+    if(!checkInput(input))
+        return 0;
+    
     if(strlen(input) > 0)
         cout << "The outcome is : " << parseTDown() << endl;
     else
