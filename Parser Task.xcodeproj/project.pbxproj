@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C74EBFBB203383DE007F77B5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C74EBFBA203383DE007F77B5 /* main.cpp */; };
+		C7B9561D203C433F00B64E1D /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B9561C203C433F00B64E1D /* libboost_system-mt.dylib */; };
+		C7B95621203C641100B64E1D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C74EBFBA203383DE007F77B5 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		C74EBFB7203383DE007F77B5 /* Parser Task */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Parser Task"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74EBFBA203383DE007F77B5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C7B9561C203C433F00B64E1D /* libboost_system-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_system-mt.dylib"; path = "ParserMain/libboost_system-mt.dylib"; sourceTree = "<group>"; };
+		C7B9561E203C469600B64E1D /* main.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = main.hpp; sourceTree = "<group>"; };
+		C7B9561F203C4F4800B64E1D /* mainTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mainTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7B9561D203C433F00B64E1D /* libboost_system-mt.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,8 +46,11 @@
 		C74EBFAE203383DE007F77B5 = {
 			isa = PBXGroup;
 			children = (
-				C74EBFB9203383DE007F77B5 /* Parser Task */,
+				C7B95618203C42A900B64E1D /* TestParser */,
+				C7B9561C203C433F00B64E1D /* libboost_system-mt.dylib */,
+				C74EBFB9203383DE007F77B5 /* ParserMain */,
 				C74EBFB8203383DE007F77B5 /* Products */,
+				C7B95617203C412C00B64E1D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +62,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C74EBFB9203383DE007F77B5 /* Parser Task */ = {
+		C74EBFB9203383DE007F77B5 /* ParserMain */ = {
 			isa = PBXGroup;
 			children = (
 				C74EBFBA203383DE007F77B5 /* main.cpp */,
+				C7B9561E203C469600B64E1D /* main.hpp */,
 			);
-			path = "Parser Task";
+			path = ParserMain;
+			sourceTree = "<group>";
+		};
+		C7B95617203C412C00B64E1D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7B95618203C42A900B64E1D /* TestParser */ = {
+			isa = PBXGroup;
+			children = (
+				C7B9561F203C4F4800B64E1D /* mainTest.cpp */,
+			);
+			path = TestParser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C74EBFBB203383DE007F77B5 /* main.cpp in Sources */,
+				C7B95621203C641100B64E1D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,16 +256,36 @@
 		C74EBFBF203383DE007F77B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4977E5YUBK;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.60.0_1/include/;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/boost/1.60.0_1/lib/,
+					"$(PROJECT_DIR)/Parser\\ Task",
+					"$(PROJECT_DIR)/Parser\\ Task",
+					"$(PROJECT_DIR)/ParserMain",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		C74EBFC0203383DE007F77B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4977E5YUBK;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.60.0_1/include/;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/boost/1.60.0_1/lib/,
+					"$(PROJECT_DIR)/Parser\\ Task",
+					"$(PROJECT_DIR)/Parser\\ Task",
+					"$(PROJECT_DIR)/ParserMain",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

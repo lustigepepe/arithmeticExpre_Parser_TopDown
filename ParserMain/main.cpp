@@ -12,23 +12,20 @@
 #include <string>
 #include <vector>
 
+//#include "main.hpp"
+//#include "../TestParser/mainTest.hpp"
 using namespace std;
 
 
 char * input = nullptr;
 
-struct RememberTerm
-{
-    int count = 0;
-    
-};
 
 struct BrackPoint
 {
     int among = 0;
     char operant = '+';
     char preOperant = '+';
-    RememberTerm remember;
+    int rememberTerm = 0;
 };
 
 void dissolveBrackets(BrackPoint& first, BrackPoint& second)
@@ -66,7 +63,7 @@ void raise()
 int among = 0;
 char operant = '+';
 char preOperant = '+';
-RememberTerm remember;
+int rememberTerm = 0;
 
 vector<BrackPoint> brack;
 char thirdSign;
@@ -170,8 +167,8 @@ int parseTDown()
     else
     {
         isInt = true;
-        remember.count++;
-        if (remember.count == 2)
+        rememberTerm++;
+        if (rememberTerm == 2)
         {
             if(secSign == '*' || secSign == '/')
             {
@@ -188,7 +185,7 @@ int parseTDown()
                     }
                 }
             }
-            remember.count = 1;
+            rememberTerm = 1;
         }
     }
     if(isInt && operant == '+')
@@ -265,19 +262,22 @@ int main(int argc, const char * argv[])
     string inputStr;
     cout << "Please enter your arithmetic expressions: " << endl;
     getline(cin, inputStr);
-    
+
     inputStr.erase(std::remove(inputStr.begin(), inputStr.end(), ' '),
                    inputStr.end());
-    
+
     auto toPointer = make_unique<char[]>(inputStr.length());
     strcpy(toPointer.get(), inputStr.c_str());
     input = toPointer.get();
- 
+
     cout << "------------------------" << endl;
     if(strlen(input) > 0)
         cout << "The outcome is : " << parseTDown() << endl;
     else
         cout << "The outcome is : " << 0 << endl;
+
+    
+    
 
     return 0;
 }
