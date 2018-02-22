@@ -6,10 +6,8 @@
 //  Copyright © 2018 soWhat. All rights reserved.
 //
 
-#include <string>
-#include <vector>
+
 #include "parser.hpp"
-#include <thread>
 
 int main(int argc, const char * argv[])
 {
