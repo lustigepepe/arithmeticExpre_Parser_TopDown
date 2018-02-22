@@ -16,16 +16,24 @@
 #define BOOST_TEST_MODULE ParserBoostTest
 #define BOOST_TEST_DYN_LINK
 #include <boost/test/unit_test.hpp>
+#include "testInterface.hpp"
 
-//#include <stdio.h>
-#include "../ParserMain/main.hpp"
+string testExpression ("(4 + 5 * (7 - 3)) - 2");
 
-int add( int i, int j ) { return i+j; }
+BOOST_AUTO_TEST_CASE(testThreadAlloc)
+{
+    threadAlloc(testExpression);
+    
+    BOOST_TEST_MESSAGE("Test threadAlloc done");
+    BOOST_TEST(input == "(4+5*(7-3))-2");
+    BOOST_TEST_MESSAGE("-------------------");
+    BOOST_TEST_MESSAGE("-------------------");
+}
 
 BOOST_AUTO_TEST_CASE( parseTdownTest )
 {
-    BOOST_CHECK( add( 2,2 ) == 4 );        // #1 continues on error
-    BOOST_TEST_MESSAGE( "Testing update :" );
+    threadAlloc(testExpression);
+    BOOST_TEST_MESSAGE("Test main parseDown down");
+    BOOST_CHECK( parseTDown() == 22 );
 }
-
 

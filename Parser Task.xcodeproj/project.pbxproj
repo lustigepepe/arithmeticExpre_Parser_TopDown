@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C715F3E1203DCD1600244A41 /* parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C715F3DE203DCD1600244A41 /* parser.cpp */; };
+		C715F3E2203DCD1600244A41 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C715F3DF203DCD1600244A41 /* main.cpp */; };
 		C7B9561D203C433F00B64E1D /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B9561C203C433F00B64E1D /* libboost_system-mt.dylib */; };
-		C7B95621203C641100B64E1D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C74EBFBA203383DE007F77B5 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,11 +25,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C715F3D1203D9F2100244A41 /* parser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = parser.cpp; sourceTree = "<group>"; };
+		C715F3D2203D9F2100244A41 /* parser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = parser.hpp; sourceTree = "<group>"; };
+		C715F3D4203DA13C00244A41 /* breakpoint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = breakpoint.hpp; sourceTree = "<group>"; };
+		C715F3D5203DC96F00244A41 /* testInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = testInterface.hpp; sourceTree = "<group>"; };
+		C715F3DB203DCD1600244A41 /* parser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = parser.hpp; sourceTree = "<group>"; };
+		C715F3DC203DCD1600244A41 /* breakpoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = breakpoint.h; sourceTree = "<group>"; };
+		C715F3DD203DCD1600244A41 /* libboost_system-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libboost_system-mt.dylib"; sourceTree = "<group>"; };
+		C715F3DE203DCD1600244A41 /* parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = parser.cpp; sourceTree = "<group>"; };
+		C715F3DF203DCD1600244A41 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C71EF487203EC5B700CEA675 /* mainTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mainTest.cpp; sourceTree = "<group>"; };
+		C71EF48B203EE30600CEA675 /* mainTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainTest.cpp; sourceTree = "<group>"; };
+		C71EF48C203EE30600CEA675 /* a.out */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = a.out; sourceTree = "<group>"; };
+		C71EF48D203EE30600CEA675 /* testInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = testInterface.hpp; sourceTree = "<group>"; };
 		C74EBFB7203383DE007F77B5 /* Parser Task */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Parser Task"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74EBFBA203383DE007F77B5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C7B9561C203C433F00B64E1D /* libboost_system-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_system-mt.dylib"; path = "ParserMain/libboost_system-mt.dylib"; sourceTree = "<group>"; };
-		C7B9561E203C469600B64E1D /* main.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = main.hpp; sourceTree = "<group>"; };
-		C7B9561F203C4F4800B64E1D /* mainTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mainTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +55,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C715F3DA203DCD1600244A41 /* ParserMain */ = {
+			isa = PBXGroup;
+			children = (
+				C715F3DB203DCD1600244A41 /* parser.hpp */,
+				C715F3DC203DCD1600244A41 /* breakpoint.h */,
+				C715F3DD203DCD1600244A41 /* libboost_system-mt.dylib */,
+				C715F3DE203DCD1600244A41 /* parser.cpp */,
+				C715F3DF203DCD1600244A41 /* main.cpp */,
+			);
+			name = ParserMain;
+			sourceTree = "<group>";
+		};
+		C71EF48A203EE30600CEA675 /* TestParser */ = {
+			isa = PBXGroup;
+			children = (
+				C71EF48B203EE30600CEA675 /* mainTest.cpp */,
+				C71EF48C203EE30600CEA675 /* a.out */,
+				C71EF48D203EE30600CEA675 /* testInterface.hpp */,
+			);
+			name = TestParser;
+			sourceTree = "<group>";
+		};
 		C74EBFAE203383DE007F77B5 = {
 			isa = PBXGroup;
 			children = (
@@ -66,7 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				C74EBFBA203383DE007F77B5 /* main.cpp */,
-				C7B9561E203C469600B64E1D /* main.hpp */,
+				C715F3D1203D9F2100244A41 /* parser.cpp */,
+				C715F3D2203D9F2100244A41 /* parser.hpp */,
+				C715F3D4203DA13C00244A41 /* breakpoint.hpp */,
+				C715F3DA203DCD1600244A41 /* ParserMain */,
 			);
 			path = ParserMain;
 			sourceTree = "<group>";
@@ -81,7 +118,9 @@
 		C7B95618203C42A900B64E1D /* TestParser */ = {
 			isa = PBXGroup;
 			children = (
-				C7B9561F203C4F4800B64E1D /* mainTest.cpp */,
+				C71EF487203EC5B700CEA675 /* mainTest.cpp */,
+				C715F3D5203DC96F00244A41 /* testInterface.hpp */,
+				C71EF48A203EE30600CEA675 /* TestParser */,
 			);
 			path = TestParser;
 			sourceTree = "<group>";
@@ -143,7 +182,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7B95621203C641100B64E1D /* main.cpp in Sources */,
+				C715F3E1203DCD1600244A41 /* parser.cpp in Sources */,
+				C715F3E2203DCD1600244A41 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
