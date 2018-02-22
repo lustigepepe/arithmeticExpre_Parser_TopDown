@@ -11,10 +11,8 @@
 
 void Parser::allocPoiStr(string& inputStr)
 {
-    
     inputStr.erase(std::remove(inputStr.begin(), inputStr.end(), ' '),
                    inputStr.end());
-    
     auto toPointer = make_unique<char[]>(inputStr.length());
     strcpy(toPointer.get(), inputStr.c_str());
     input = toPointer.get();
