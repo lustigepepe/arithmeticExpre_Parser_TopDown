@@ -28,14 +28,14 @@ class Parser
     int rememberTerm = 0;
     vector<BrackPoint> brack;
     void allocPoiStr(string& inputStr);
-    void recognizeOperator(char temp, char secSign, bool& isInt);
-    void operation(char temp, char secSign, bool& isInt);
+    void recognizeOperator(const char temp ,const char secSign, bool& isInt);
+    void operation(const char temp, const char secSign, bool& isInt);
 
 
 public:
     Parser() = default;
-    bool opValid(char ch);
-    bool plusMinus(char ch);
+    bool opValid(const char ch);
+    bool plusMinus(const char ch);
     bool checkInput();
     void dissolveBrackets(BrackPoint& first, BrackPoint& second);
     char get();

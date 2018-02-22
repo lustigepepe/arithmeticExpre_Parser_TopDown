@@ -27,14 +27,14 @@ void Parser::threadAlloc(string& inputStr)
 }
 
 
-bool Parser::opValid(char ch)
+bool Parser::opValid(const char ch)
 {
     if(ch == '+'|| ch == '-' || ch == '/'|| ch == '*'|| ch == '(' || ch == ')')
         return true;
     return false;
 }
 
-bool Parser::plusMinus(char ch)
+bool Parser::plusMinus(const char ch)
 {
     if(ch == '-' || ch == '+')
         return true;
@@ -115,8 +115,8 @@ void Parser::raise()
     ++input;
 }
 
-void Parser::operation( char temp,
-                       char secSign,
+void Parser::operation(const char temp,
+                       const char secSign,
                        bool& isInt)
 {
     if(isInt && operant == '+')
@@ -164,8 +164,8 @@ void Parser::operation( char temp,
         }
     
 }
-void Parser::recognizeOperator( char temp,
-                               char secSign,
+void Parser::recognizeOperator(const char temp,
+                               const char secSign,
                                bool& isInt)
 {
     if(temp == '+')
